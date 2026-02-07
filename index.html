@@ -443,25 +443,29 @@
                             >
                                 <div className="w-full h-96 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl flex items-center justify-center">
                                     <div className="text-center">
-                                        <div className="w-48 h-48 mx-auto bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-6xl font-bold">
+                                        <div className="w-48 h-48 mx-auto bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-6xl font-bold" style="
+                                            width: 280px;
+                                            height: 280px;
+                                            border-radius: 50%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                        
+                                            background: radial-gradient(
+                                              circle,
+                                              rgba(168,85,247,0.35),
+                                              rgba(0,0,0,0.9) 70%
+                                            );
+                                          ">
                                             <img
                                               src="./photo.jpg"
                                               style="
-                                                width: 100%;
-                                                height: 100%;
+                                                width: 260px;
+                                                height: 260px;
                                                 object-fit: cover;
                                                 border-radius: 50%;
-                                                
-                                                filter: none;
-                                                
-                                                box-shadow:
-                                                  0 8px 30px rgba(0,0,0,0.45),
-                                                  inset 0 0 0 1px rgba(255,255,255,0.08);
-                                                
-                                                background-color: #111;
-                                                "/>
-
-
+                                                display: block;
+                                                background-color: #111; "/>
                                         </div>
                                     </div>
                                 </div>

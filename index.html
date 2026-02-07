@@ -901,17 +901,16 @@
       "https://script.google.com/macros/s/AKfycbx99xjhZgoF3iHjFZqGTkcz054ObC3AvVvHZrDcHhxTSdQWZlFx2qG_QZvGXVqPVXRG/exec",
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
+        mode: "no-cors",
         body: formBody
       }
     );
 
+    // no-cors ALWAYS resolves → assume success
     setSubmitted(true);
     setFormData({ name: "", email: "", message: "" });
-
     setTimeout(() => setSubmitted(false), 3000);
+
   } catch (err) {
     alert("Failed to send message. Please try again.");
   }

@@ -894,7 +894,10 @@
             const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const formBody = new URLSearchParams(formData).toString();
+  const formBody =
+  "name=" + encodeURIComponent(formData.name) +
+  "&email=" + encodeURIComponent(formData.email) +
+  "&message=" + encodeURIComponent(formData.message);
 
   await fetch(
     "https://script.google.com/macros/s/AKfycbx99xjhZgoF3iHjFZqGTkcz054ObC3AvVvHZrDcHhxTSdQWZlFx2qG_QZvGXVqPVXRG/exec",

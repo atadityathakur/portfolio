@@ -892,28 +892,30 @@
             const [submitted, setSubmitted] = useState(false);
             
             const handleSubmit = async (e) => {
-                  e.preventDefault();
-                
-                  try {
-                    await fetch(
-                      "https://script.google.com/macros/s/AKfycbx99xjhZgoF3iHjFZqGTkcz054ObC3AvVvHZrDcHhxTSdQWZlFx2qG_QZvGXVqPVXRG/exec",
-                      {
-                        method: "POST",
-                        headers: {
-                          "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(formData)
-                      }
-                    );
-                
-                    setSubmitted(true);
-                    setFormData({ name: "", email: "", message: "" });
-                
-                    setTimeout(() => setSubmitted(false), 3000);
-                  } catch (error) {
-                    alert("Failed to send message. Please try again.");
-                  }
-                };
+  e.preventDefault();
+
+  const formBody = new URLSearchParams(formData).toString();
+
+  try {
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbx99xjhZgoF3iHjFZqGTkcz054ObC3AvVvHZrDcHhxTSdQWZlFx2qG_QZvGXVqPVXRG/exec",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: formBody
+      }
+    );
+
+    setSubmitted(true);
+    setFormData({ name: "", email: "", message: "" });
+
+    setTimeout(() => setSubmitted(false), 3000);
+  } catch (err) {
+    alert("Failed to send message. Please try again.");
+  }
+};
 
             
             return (

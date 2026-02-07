@@ -909,7 +909,7 @@
   );
 
   setSubmitted(true);
-  setFormData({ name: "", email: "", message: "" });
+  setFormData({ Name: "", Email: "", Message: "" });
   setTimeout(() => setSubmitted(false), 3000);
 };
 
@@ -1003,11 +1003,11 @@
                                 </div>
                                 <div className="mb-6">
                                     <input
-                                        type="email"
+                                        type="Email"
                                         placeholder="Your Email"
                                         required
-                                        value={formData.email}
-                                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                        value={formData.Email}
+                                        onChange={(e) => setFormData({...formData, Email: e.target.value})}
                                         className="form-input w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder-gray-500 transition-all"
                                     />
                                 </div>
@@ -1016,8 +1016,8 @@
                                         placeholder="Your Message"
                                         required
                                         rows="5"
-                                        value={formData.message}
-                                        onChange={(e) => setFormData({...formData, message: e.target.value})}
+                                        value={formData.Message}
+                                        onChange={(e) => setFormData({...formData, Message: e.target.value})}
                                         className="form-input w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder-gray-500 transition-all resize-none"
                                     ></textarea>
                                 </div>

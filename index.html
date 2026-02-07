@@ -898,17 +898,18 @@
             const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const formBody =
-    "Name=" + encodeURIComponent(formData.Name) +
-    "&Email=" + encodeURIComponent(formData.Email) +
-    "&Message=" + encodeURIComponent(formData.Message);
-
   await fetch(
-    "https://script.google.com/macros/s/AKfycbx99xjhZgoF3iHjFZqGTkcz054ObC3AvVvHZrDcHhxTSdQWZlFx2qG_QZvGXVqPVXRG/exec",
+    "YOUR_NEW_WEB_APP_URL",
     {
       method: "POST",
-      mode: "no-cors",
-      body: formBody
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        Name: formData.Name,
+        Email: formData.Email,
+        Message: formData.Message
+      })
     }
   );
 

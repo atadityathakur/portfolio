@@ -977,21 +977,46 @@
                                     ))}
                                 </div>
                                 
-                                <div className="flex gap-4 mt-8">
-                                    {['linkedin', 'github', 'twitter', 'dribbble'].map((social, index) => (
-                                        <motion.a
-                                            key={social}
-                                            href="#"
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                            transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                                            whileHover={{ scale: 1.2, y: -5 }}
-                                            className="w-12 h-12 glass rounded-full flex items-center justify-center text-purple-400 hover:text-white transition-colors"
-                                        >
-                                            {social[0].toUpperCase()}
-                                        </motion.a>
-                                    ))}
-                                </div>
+                               <div className="flex gap-4 mt-8">
+  {[
+    {
+      name: "linkedin",
+      url: "https://www.linkedin.com/in/adityathakur08888/",
+      icon: <Linkedin size={22} />
+    },
+    {
+      name: "github",
+      url: "https://github.com/atadityathakur",
+      icon: <Github size={22} />
+    },
+    {
+      name: "twitter",
+      url: "https://twitter.com/YOUR_USERNAME",
+      icon: <Twitter size={22} />
+    },
+    {
+      name: "dribbble",
+      url: "https://dribbble.com/YOUR_USERNAME",
+      icon: <Dribbble size={22} />
+    }
+  ].map((social, index) => (
+    <motion.a
+      key={social.name}
+      href={social.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+      whileHover={{ scale: 1.2, y: -5 }}
+      className="w-12 h-12 glass rounded-full flex items-center justify-center text-purple-400 hover:text-white transition-colors"
+      aria-label={social.name}
+    >
+      {social.icon}
+    </motion.a>
+  ))}
+</div>
+
                             </motion.div>
                             
                             <motion.form
@@ -1050,6 +1075,9 @@
         // ============================================
         // FOOTER COMPONENT
         // ============================================
+        import { motion } from "framer-motion";
+import { Linkedin, Github, Twitter, Dribbble } from "lucide-react";
+
         const Footer = () => {
             return (
                 <footer className="py-12 border-t border-white/10">
@@ -1058,9 +1086,9 @@
                             <div className="text-2xl font-bold gradient-text heading-font mb-4 md:mb-0">
                                 PORTFOLIO
                             </div>
-                            <div className="text-gray-400">
+                            /*<div className="text-gray-400">
                                 © 2026 Premium Portfolio. All rights reserved.
-                            </div>
+                            </div>*/
                         </div>
                     </div>
                 </footer>

@@ -895,9 +895,9 @@
   e.preventDefault();
 
   const formBody =
-  "name=" + encodeURIComponent(formData.name) +
-  "&email=" + encodeURIComponent(formData.email) +
-  "&message=" + encodeURIComponent(formData.message);
+    "Name=" + encodeURIComponent(formData.Name) +
+    "&Email=" + encodeURIComponent(formData.Email) +
+    "&Message=" + encodeURIComponent(formData.Message);
 
   await fetch(
     "https://script.google.com/macros/s/AKfycbx99xjhZgoF3iHjFZqGTkcz054ObC3AvVvHZrDcHhxTSdQWZlFx2qG_QZvGXVqPVXRG/exec",
@@ -909,9 +909,10 @@
   );
 
   setSubmitted(true);
-  setFormData({ Name: "", Email: "", Message: "" });
+  setFormData({ name: "", email: "", message: "" });
   setTimeout(() => setSubmitted(false), 3000);
 };
+
 
             
             return (

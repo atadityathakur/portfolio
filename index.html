@@ -888,7 +888,11 @@
         const ContactSection = () => {
             const ref = useRef(null);
             const isInView = useInView(ref, { once: true, margin: "-100px" });
-            const [formData, setFormData] = useState({ Name: '', Email: '', Message: '' });
+            const [formData, setFormData] = useState({
+  Name: "",
+  Email: "",
+  Message: ""
+});
             const [submitted, setSubmitted] = useState(false);
             
             const handleSubmit = async (e) => {
@@ -996,14 +1000,14 @@
                                         type="text"
                                         placeholder="Your Name"
                                         required
-                                        value={formData.name}
-                                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                        value={formData.Name}
+                                        onChange={(e) => setFormData({...formData, Name: e.target.value})}
                                         className="form-input w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder-gray-500 transition-all"
                                     />
                                 </div>
                                 <div className="mb-6">
                                     <input
-                                        type="Email"
+                                        type="email"
                                         placeholder="Your Email"
                                         required
                                         value={formData.Email}

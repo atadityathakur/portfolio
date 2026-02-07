@@ -889,9 +889,9 @@
             const ref = useRef(null);
             const isInView = useInView(ref, { once: true, margin: "-100px" });
             const [formData, setFormData] = useState({
-  Name: "",
-  Email: "",
-  Message: ""
+  name: "",
+  email: "",
+  message: ""
 });
             const [submitted, setSubmitted] = useState(false);
             
@@ -906,15 +906,15 @@
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        Name: formData.Name,
-        Email: formData.Email,
-        Message: formData.Message
+        name: formData.name,
+        email: formData.email,
+        message: formData.message
       })
     }
   );
 
   setSubmitted(true);
-  setFormData({ Name: "", Email: "", Message: "" });
+  setFormData({ name: "", email: "", message: "" });
   setTimeout(() => setSubmitted(false), 3000);
 };
 
@@ -1001,8 +1001,8 @@
                                         type="text"
                                         placeholder="Your Name"
                                         required
-                                        value={formData.Name}
-                                        onChange={(e) => setFormData({...formData, Name: e.target.value})}
+                                        value={formData.name}
+                                        onChange={(e) => setFormData({...formData, name: e.target.value})}
                                         className="form-input w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder-gray-500 transition-all"
                                     />
                                 </div>
@@ -1011,8 +1011,8 @@
                                         type="email"
                                         placeholder="Your Email"
                                         required
-                                        value={formData.Email}
-                                        onChange={(e) => setFormData({...formData, Email: e.target.value})}
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({...formData, email: e.target.value})}
                                         className="form-input w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder-gray-500 transition-all"
                                     />
                                 </div>
@@ -1021,8 +1021,8 @@
                                         placeholder="Your Message"
                                         required
                                         rows="5"
-                                        value={formData.Message}
-                                        onChange={(e) => setFormData({...formData, Message: e.target.value})}
+                                        value={formData.message}
+                                        onChange={(e) => setFormData({...formData, message: e.target.value})}
                                         className="form-input w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder-gray-500 transition-all resize-none"
                                     ></textarea>
                                 </div>
